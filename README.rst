@@ -11,13 +11,15 @@ rank
 .. image:: https://codecov.io/gh/petrdlouhy/django-rank-query/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/petrdlouhy/django-rank-query
 
+**Warning:** Since Django 2.0 this application is deprecated. Use built in `window functions <https://docs.djangoproject.com/en/2.0/ref/models/database-functions/#window-functions>`_.
+
 Enable SQL Window functions for use in Django queries. Add rank to your query.
 
-Django in curren't version (1.10) doesn't support [window functions](https://www.postgresql.org/docs/9.3/static/functions-window.html) as seen in PostgreSQL.
+Django in curren't version (1.10) doesn't support `window functions <https://www.postgresql.org/docs/9.3/static/functions-window.html>`_ as seen in PostgreSQL.
 This implemets `rank`, `dense_rank` and adds shortcut for `upper_rank`, which retrieves upper value for rank (rank of last element in the window).
 The implementation is currently working only on PostgreSQL.
 
-Note: The support for window functions is being already solved in [issue #26608](https://code.djangoproject.com/ticket/26608).
+Note: The support for window functions is being already solved in `issue #26608 <https://code.djangoproject.com/ticket/26608>`_.
 
 Quickstart
 ----------
