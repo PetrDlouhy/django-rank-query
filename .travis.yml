@@ -32,6 +32,3 @@ script: tox -e $TOX_ENV
 
 after_success:
   - codecov -e TOX_ENV
-
-addons:
-  postgresql: "9.3"
