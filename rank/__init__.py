@@ -8,6 +8,12 @@ class Rank(Func):
     template = '%(function)s() OVER (ORDER BY %(expressions)s DESC)'
 
 
+class AscRank(Func):
+    """Rank items in ascending order."""
+    function = 'RANK'
+    template = '%(function)s() OVER (ORDER BY %(expression)s ASC)'
+
+
 class DenseRank(Func):
     function = 'DENSE_RANK'
     template = '%(function)s() OVER (ORDER BY %(expressions)s DESC)'

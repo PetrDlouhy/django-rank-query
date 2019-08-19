@@ -34,6 +34,16 @@ class TestRank(TestCase):
         ]
         self.assertListEqual(list(user_rank_list), expected_list)
 
+    def test_asc_rank(self):
+        user_rank_list = User.objects.annotate(rank=AscRank('last_name')).values_list('rank', 'last_name')
+        expected_list = [
+            (1, "Bar"),
+            (1, "Bar"),
+            (2, "Baz"),
+            (3, "Foo"),
+        ]
+        self.assertListEqual(list(user_rank_list, expected_list)
+
     def test_upper_rank(self):
         user_rank_list = User.objects.annotate(rank=UpperRank('last_name')).values_list('rank', 'last_name')
         expected_list = [
