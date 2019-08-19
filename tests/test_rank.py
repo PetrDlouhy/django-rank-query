@@ -52,7 +52,7 @@ class TestRank(TestCase):
             (2, "Baz"),
             (1, "Foo"),
         ]
-        self.assertListEqual(list(user_rank_list), expected_list)
+        self.assertListEqual(list(user_rank_list), expected_list))
 
     def test_dense_rank(self):
         user_rank_list = User.objects.annotate(rank=DenseRank('last_name')).values_list('rank', 'last_name')
